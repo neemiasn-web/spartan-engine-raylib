@@ -97,4 +97,4 @@ Após a compilação, execute o protótipo:
 
 ---
 
-**Desenvolvido por:** Manus AI
+**Desenvolvido por:Neemias Hermes 
