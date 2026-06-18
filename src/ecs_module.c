@@ -3,8 +3,8 @@
 
 // Sistema de Movimentação
 void MoveSystem(ecs_iter_t *it) {
-    Position *p = ecs_field(it, Position, 1);
-    Velocity *v = ecs_field(it, Velocity, 2);
+    Position *p = ecs_field(it, Position, 0);
+    Velocity *v = ecs_field(it, Velocity, 1);
 
     for (int i = 0; i < it->count; i++) {
         p[i].position.x += v[i].velocity.x * it->delta_time;
@@ -15,8 +15,8 @@ void MoveSystem(ecs_iter_t *it) {
 
 // Sistema de Renderização
 void RenderSystem(ecs_iter_t *it) {
-    Position *p = ecs_field(it, Position, 1);
-    Renderable *r = ecs_field(it, Renderable, 2);
+    Position *p = ecs_field(it, Position, 0);
+    Renderable *r = ecs_field(it, Renderable, 1);
 
     for (int i = 0; i < it->count; i++) {
         DrawModel(r[i].model, p[i].position, 1.0f, r[i].color);
